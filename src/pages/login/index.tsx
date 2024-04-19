@@ -14,7 +14,7 @@ export const Login = () => {
 
     const submit = useCallback(async (username: string, password: string) => {
         console.log('submit', state, username, password)
-        if (!username?.length || !password?.length) {
+        if (!username?.length || !password?.length || !state?.current?.length) {
             return
         }
         try {
