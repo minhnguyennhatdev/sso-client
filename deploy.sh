@@ -8,6 +8,8 @@ yarn
 
 yarn build
 
+yarn global add serve
+
 pm2 restart ecosystem.config.js
 
 # SERVICE='todo-server'
