@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'sso-client',
-      script: 'node server.js',
+      script: 'serve -s build -l 3001',
     },
   ],
 };
