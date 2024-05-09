@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider, useSearchParams } from 'react-router-dom';
 import { Login } from './pages/login';
 import { Register } from './pages/register';
 
 
+const Redirect = () => {
+  const state = new URLSearchParams(window?.location?.search).get('state');
+  return <Navigate to={`/login?state=${state}`} />
+}
+
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/*",
     // redirect to login page
-    element: <Navigate to="/login" replace />
+    element: <Redirect />
   },
   {
     path: "login",
